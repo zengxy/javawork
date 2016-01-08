@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapred>
+    <!-- profile -->
+    <baseId>029e4257b407e4f57896ee8e86b6fab5</baseId>
+    <projectId>2805</projectId>
+    <resourceName>frqrank</resourceName>
+    <idePath>工作流/knn</idePath>
+
+    <!-- classes -->
+    <jobLauncher>zxy.frqrank.JobLauncher</jobLauncher>
+    <mapper>zxy.frqrank.MyMapper</mapper>
+    <reducer>zxy.frqrank.MyReducer</reducer>
+
+    <!--task-->
+    <mapOutputKey>session:bigint,user_id:string</mapOutputKey>
+    <mapOutputValue>item:string,action:string,vtime:string</mapOutputValue>
+    <!--
+    <partitionColumns>col1,col2</partitionColumns>
+    <outputKeySortColumns>col1,col2</outputKeySortColumns>
+    <outputKeySortOrders>ASC,DESC</outputKeySortOrders>
+    <outputGroupingColumns>col1,col2</outputGroupingColumns>
+    <numReduceTask>8</numReduceTask>
+    <memoryForMapTask>2048</memoryForMapTask>
+    <memoryForReduceTask>2048</memoryForReduceTask>
+    -->
+
+    <!-- tables -->
+    <inputTables>
+        <table>
+            <name>session</name>
+        </table>
+    </inputTables>
+    <outputTable>
+        <name>recencyfrequencyRank</name>
+    </outputTable>
+</mapred>

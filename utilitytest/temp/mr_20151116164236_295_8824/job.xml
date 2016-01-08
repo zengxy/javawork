@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><configuration>
+<property><name>odps.mapred.input.desc</name><value>[{"tblName":"session","partSpec":{},"label":"__default__"}]</value></property>
+<property><name>odps.mapred.map.class</name><value>zxy.utilitytest.MyMapper</value></property>
+<property><name>odps.mapred.job.name</name><value>mr_20151116164236_295_8824</value></property>
+<property><name>odps.mapred.mapoutput.key.schema</name><value>user_id:STRING</value></property>
+<property><name>odps.mapred.mapoutput.value.schema</name><value>item_id:STRING,vtime:STRING</value></property>
+<property><name>odps.mapred.output.desc</name><value>[{"tblName":"userfeature","partSpec":{},"label":"__default__"}]</value></property>
+<property><name>odps.mapred.reduce.class</name><value>zxy.utilitytest.MyReducer</value></property>
+</configuration>

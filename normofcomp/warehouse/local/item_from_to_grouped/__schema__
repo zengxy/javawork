@@ -1,0 +1,3 @@
+project=local
+table=item_from_to_grouped
+columns=item_from:STRING,item_to:STRING,cnt:bigint

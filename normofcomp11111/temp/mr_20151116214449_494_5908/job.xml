@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><configuration>
+<property><name>odps.mapred.input.desc</name><value>[{"tblName":"item_from_to_grouped","partSpec":{},"label":"__default__"}]</value></property>
+<property><name>odps.mapred.map.class</name><value>zxy.comp.MyMapper</value></property>
+<property><name>odps.mapred.job.name</name><value>mr_20151116214449_494_5908</value></property>
+<property><name>odps.mapred.mapoutput.key.schema</name><value>item_from:STRING</value></property>
+<property><name>odps.mapred.mapoutput.value.schema</name><value>item_to:STRING,cnt:BIGINT</value></property>
+<property><name>odps.mapred.output.desc</name><value>[{"tblName":"item_switch_normlized","partSpec":{},"label":"__default__"}]</value></property>
+<property><name>odps.mapred.reduce.class</name><value>zxy.comp.MyReducer</value></property>
+</configuration>

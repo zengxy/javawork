@@ -1,0 +1,3 @@
+project=local
+table=loginfo
+columns=user_id:STRING,item_id:BIGINT,category:string,action:string,vtime:string

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapred>
+    <!-- profile -->
+    <baseId>029e4257b407e4f57896ee8e86b6fab5</baseId>
+    <projectId>10596</projectId>
+    <resourceName>comp</resourceName>
+    <idePath>工作流/comp</idePath>
+
+    <!-- classes -->
+    <jobLauncher>zxy.comp.JobLauncher</jobLauncher>
+    <mapper>zxy.comp.MyMapper</mapper>
+    <reducer>zxy.comp.MyReducer</reducer>
+
+    <!--task-->
+    <mapOutputKey>user_id:string</mapOutputKey>
+    <mapOutputValue>item_id:string,category:string,action:string,vtime:string</mapOutputValue>
+    <!--
+    <partitionColumns>col1,col2</partitionColumns>
+    <outputKeySortColumns>col1,col2</outputKeySortColumns>
+    <outputKeySortOrders>ASC,DESC</outputKeySortOrders>
+    <outputGroupingColumns>col1,col2</outputGroupingColumns>
+    <numReduceTask>8</numReduceTask>
+    <memoryForMapTask>2048</memoryForMapTask>
+    <memoryForReduceTask>2048</memoryForReduceTask>
+    -->
+
+    <!-- tables -->
+    <inputTables>
+        <table>
+            <name>loginfo_sample_by_review_cnt</name>
+        </table>
+    </inputTables>
+    <outputTable>
+        <name>item_from_to</name>
+    </outputTable>
+</mapred>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapred>
+    <!-- profile -->
+    <baseId>029e4257b407e4f57896ee8e86b6fab5</baseId>
+    <projectId>2805</projectId>
+    <resourceName>normofcomp</resourceName>
+    <idePath>工作流/comp</idePath>
+
+    <!-- classes -->
+    <jobLauncher>zxy.normofcomp.JobLauncher</jobLauncher>
+    <mapper>zxy.normofcomp.MyMapper</mapper>
+    <reducer>zxy.normofcomp.MyReducer</reducer>
+
+    <!--task-->
+    <mapOutputKey>item_from:string</mapOutputKey>
+    <mapOutputValue>item_to:string,cnt:bigint</mapOutputValue>
+    <!--
+    <partitionColumns>col1,col2</partitionColumns>
+    <outputKeySortColumns>col1,col2</outputKeySortColumns>
+    <outputKeySortOrders>ASC,DESC</outputKeySortOrders>
+    <outputGroupingColumns>col1,col2</outputGroupingColumns>
+    <numReduceTask>8</numReduceTask>
+    <memoryForMapTask>2048</memoryForMapTask>
+    <memoryForReduceTask>2048</memoryForReduceTask>
+    -->
+
+    <!-- tables -->
+    <inputTables>
+        <table>
+            <name>item_from_to_grouped</name>
+        </table>
+    </inputTables>
+    <outputTable>
+        <name>item_switch_normlized</name>
+    </outputTable>
+</mapred>

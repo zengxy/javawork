@@ -1,0 +1,3 @@
+project=local
+table=item_switch_normlized
+columns=item_from:STRING,item_to:BIGINT,switch_pr:DOUBLE

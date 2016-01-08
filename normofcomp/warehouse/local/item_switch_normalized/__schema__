@@ -1,0 +1,3 @@
+project=local
+table=item_switch_normalized
+columns=item_from:STRING,item_to:string,switch_pr:double,cnt:bigint

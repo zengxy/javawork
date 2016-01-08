@@ -1,0 +1,3 @@
+project=local
+table=recencyAUC
+columns=session:BIGINT,user_id:STRING,hit:BIGINT,all:BIGINT

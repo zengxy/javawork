@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapred>
+    <!-- profile -->
+    <baseId>029e4257b407e4f57896ee8e86b6fab5</baseId>
+    <projectId>2805</projectId>
+    <resourceName>userbuyset</resourceName>
+    <idePath>工作流/knn</idePath>
+
+    <!-- classes -->
+    <jobLauncher>zxy.userbuyset.JobLauncher</jobLauncher>
+    <mapper>zxy.userbuyset.MyMapper</mapper>
+    <reducer>zxy.userbuyset.MyReducer</reducer>
+
+    <!--task-->
+    <mapOutputKey>user_id:string</mapOutputKey>
+    <mapOutputValue>item:string</mapOutputValue>
+    <!--
+    <partitionColumns>col1,col2</partitionColumns>
+    <outputKeySortColumns>col1,col2</outputKeySortColumns>
+    <outputKeySortOrders>ASC,DESC</outputKeySortOrders>
+    <outputGroupingColumns>col1,col2</outputGroupingColumns>
+    <numReduceTask>8</numReduceTask>
+    <memoryForMapTask>2048</memoryForMapTask>
+    <memoryForReduceTask>2048</memoryForReduceTask>
+    -->
+
+    <!-- tables -->
+    <inputTables>
+        <table>
+            <name>model_init_train</name>
+        </table>
+    </inputTables>
+    <outputTable>
+        <name>userbuytable</name>
+    </outputTable>
+</mapred>

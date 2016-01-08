@@ -1,0 +1,3 @@
+project=local
+table=model_init
+columns=user_id string,session bigint,isBought bigint,item string,fuis double,itemFeature String

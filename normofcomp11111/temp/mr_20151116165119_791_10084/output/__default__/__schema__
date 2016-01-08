@@ -1,0 +1,3 @@
+project=local
+table=item_from_to
+columns=item_from:STRING,item_to:BIGINT

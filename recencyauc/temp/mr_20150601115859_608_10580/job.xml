@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><configuration>
+<property><name>odps.mapred.input.desc</name><value>[{"tblName":"sessioninfo","partSpec":{},"label":"__default__"}]</value></property>
+<property><name>odps.mapred.map.class</name><value>zxy.recencyauc.MyMapper</value></property>
+<property><name>odps.mapred.job.name</name><value>mr_20150601115859_608_10580</value></property>
+<property><name>odps.mapred.mapoutput.key.schema</name><value>session:BIGINT,user_id:STRING</value></property>
+<property><name>odps.mapred.mapoutput.value.schema</name><value>item_id:STRING,bundle:STRING,action:STRING,vtime:STRING</value></property>
+<property><name>odps.mapred.output.desc</name><value>[{"tblName":"recencyAuc","partSpec":{},"label":"__default__"}]</value></property>
+<property><name>odps.mapred.reduce.class</name><value>zxy.recencyauc.MyReducer</value></property>
+</configuration>

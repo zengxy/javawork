@@ -1,0 +1,4 @@
+project=local
+table=sessioninfo
+columns=session:BIGINT,user_id:STRING,item_id:BIGINT,bundle:STRING,action:STRING,vtime:STRING
+partitions=dt:STRING

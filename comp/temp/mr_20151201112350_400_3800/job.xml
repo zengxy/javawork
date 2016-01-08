@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><configuration>
+<property><name>odps.mapred.input.desc</name><value>[{"tblName":"loginfo_sample_by_review_cnt","partSpec":{},"label":"__default__"}]</value></property>
+<property><name>odps.mapred.map.class</name><value>zxy.comp.MyMapper</value></property>
+<property><name>odps.mapred.job.name</name><value>mr_20151201112350_400_3800</value></property>
+<property><name>odps.mapred.mapoutput.key.schema</name><value>user_id:STRING</value></property>
+<property><name>odps.mapred.mapoutput.value.schema</name><value>item_id:STRING,category:STRING,action:STRING,vtime:STRING</value></property>
+<property><name>odps.mapred.output.desc</name><value>[{"tblName":"item_from_to","partSpec":{},"label":"__default__"}]</value></property>
+<property><name>odps.mapred.reduce.class</name><value>zxy.comp.MyReducer</value></property>
+</configuration>

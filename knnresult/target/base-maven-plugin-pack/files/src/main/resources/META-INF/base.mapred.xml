@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapred>
+    <!-- profile -->
+    <baseId>029e4257b407e4f57896ee8e86b6fab5</baseId>
+    <projectId>2805</projectId>
+    <resourceName>knnresult</resourceName>
+    <idePath>工作流/knn</idePath>
+
+    <!-- classes -->
+    <jobLauncher>zxy.knnresult.JobLauncher</jobLauncher>
+    <mapper>zxy.knnresult.MyMapper</mapper>
+    <reducer>zxy.knnresult.MyReducer</reducer>
+
+    <!--task-->
+    <mapOutputKey>session:bigint,user_id:string,itemsrank:string</mapOutputKey>
+    <mapOutputValue>isbought:bigint,item:string</mapOutputValue>
+    <!--
+    <partitionColumns>col1,col2</partitionColumns>
+    <outputKeySortColumns>col1,col2</outputKeySortColumns>
+    <outputKeySortOrders>ASC,DESC</outputKeySortOrders>
+    <outputGroupingColumns>col1,col2</outputGroupingColumns>
+    <numReduceTask>8</numReduceTask>
+    <memoryForMapTask>2048</memoryForMapTask>
+    <memoryForReduceTask>2048</memoryForReduceTask>
+    -->
+
+    <!-- tables -->
+    <inputTables>
+        <table>
+            <name>knnResultInTable</name>
+        </table>
+    </inputTables>
+    <outputTable>
+        <name>lfresult</name>
+    </outputTable>
+</mapred>

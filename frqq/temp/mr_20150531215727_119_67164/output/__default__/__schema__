@@ -1,0 +1,3 @@
+project=local
+table=frqqresult
+columns=session:BIGINT,user_id:STRING,hit:BIGINT,hitb:BIGINT

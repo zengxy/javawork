@@ -1,0 +1,3 @@
+project=local
+table=lfresult
+columns=session:bigint,user_id:string,top1:bigint,top2:bigint,top3:bigint
