@@ -9,19 +9,22 @@ import java.io.IOException;
  * Mapper模板。请用真实逻辑替换模板内容
  */
 public class MyMapper implements Mapper {
-    private Record word;
-    private Record one;
+    private Record key;
+    private Record value;
 
     public void setup(TaskContext context) throws IOException {
-        word = context.createMapOutputKeyRecord();
-        one = context.createMapOutputValueRecord();
-        one.setBigint(0, 1L);
+        key = context.createMapOutputKeyRecord();
+        value = context.createMapOutputValueRecord();
     }
 
     public void map(long recordNum, Record record, TaskContext context) throws IOException {
-        String w = record.getString(0);
-        word.setString(0, w);
-        context.write(word, one);
+    	key.set("session",record.getBigint(0));
+    	key.set("user_id",record.getString(1));
+    	key.set("category",record.getString(3));
+    	
+    	value.set("item_id",record.getString(2));
+    	value.set("action",record.getString(4));
+        context.write(key, value);
     }
 
     public void cleanup(TaskContext context) throws IOException {

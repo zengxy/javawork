@@ -1,0 +1,3 @@
+project=local
+table=sessionforcomp
+columns=session:BIGINT,user_id:STRING,item_id:STRING,category:STRING,action:STRING,vtime:STRING,brand_id:STRING,seller_id:STRING

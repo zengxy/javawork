@@ -1,0 +1,3 @@
+project=local
+table=initbipartite
+columns=session:string,outdegree:bigint,item:string,count:bigint
