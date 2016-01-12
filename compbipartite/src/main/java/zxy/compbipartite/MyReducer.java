@@ -52,7 +52,7 @@ public class MyReducer implements Reducer {
 		
 		
 		for (String item : item_count.keySet()) {
-			output.set(0,key.getString("user_id")+"_"+key.getBigint("session").toString());
+			output.set(0,key.getString("user_id")+"_"+key.getBigint("session").toString()+"_"+key.getString("category"));
 			output.set(1,sessionLen);
 			output.set(2,item);
 			output.set(3,item_count.get(item));
