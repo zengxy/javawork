@@ -10,11 +10,10 @@
     <jobLauncher>zxy.initItemGraph.JobLauncher</jobLauncher>
     <mapper>zxy.initItemGraph.MyMapper</mapper>
     <reducer>zxy.initItemGraph.MyReducer</reducer>
-    <combiner>zxy.initItemGraph.MyCombiner</combiner>
 
     <!--task-->
-    <mapOutputKey>word:string</mapOutputKey>
-    <mapOutputValue>cnt:bigint</mapOutputValue>
+    <mapOutputKey>itemfrom:string,itemto:string</mapOutputKey>
+    <mapOutputValue>pr:double</mapOutputValue>
     <!--
     <partitionColumns>col1,col2</partitionColumns>
     <outputKeySortColumns>col1,col2</outputKeySortColumns>
@@ -28,15 +27,10 @@
     <!-- tables -->
     <inputTables>
         <table>
-            <name>wordcount_in</name>
-            <partitions>
-                <partition>dt={yyyymmdd}</partition>
-                <partition>dt={yyyymmdd-1}</partition>
-            </partitions>
+            <name>itemtoitemlist</name>
         </table>
     </inputTables>
     <outputTable>
-        <name>wordcount_out</name>
-        <partition>dt={yyyymmdd}</partition>
+        <name>itemGraph</name>
     </outputTable>
 </mapred>

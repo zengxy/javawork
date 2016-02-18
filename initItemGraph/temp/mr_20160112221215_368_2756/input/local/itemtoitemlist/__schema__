@@ -1,0 +1,3 @@
+project=local
+table=itemtoitemlist
+columns=item:STRING,itemtosessionpr:DOUBLE,toitemlist:STRING

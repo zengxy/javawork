@@ -1,4 +1,0 @@
-project=local
-table=wordcount_out
-columns=word:STRING,cnt:BIGINT
-partitions=dt:STRING

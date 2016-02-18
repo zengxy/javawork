@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><configuration>
+<property><name>odps.mapred.input.desc</name><value>[{"tblName":"itemtoitemlist","partSpec":{},"label":"__default__"}]</value></property>
+<property><name>odps.mapred.map.class</name><value>zxy.initItemGraph.MyMapper</value></property>
+<property><name>odps.mapred.job.name</name><value>mr_20160112224058_272_3592</value></property>
+<property><name>odps.mapred.mapoutput.key.schema</name><value>itemfrom:STRING,itemto:STRING</value></property>
+<property><name>odps.mapred.mapoutput.value.schema</name><value>pr:DOUBLE</value></property>
+<property><name>odps.mapred.output.desc</name><value>[{"tblName":"itemGraph","partSpec":{},"label":"__default__"}]</value></property>
+<property><name>odps.mapred.reduce.class</name><value>zxy.initItemGraph.MyReducer</value></property>
+</configuration>

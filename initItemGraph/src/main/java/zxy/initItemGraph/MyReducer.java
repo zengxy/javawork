@@ -10,21 +10,22 @@ import java.util.Iterator;
  * Reducer模板。请用真实逻辑替换模板内容
  */
 public class MyReducer implements Reducer {
-    private Record result;
+    private Record output;
 
     public void setup(TaskContext context) throws IOException {
-        result = context.createOutputRecord();
+        output = context.createOutputRecord();
     }
 
     public void reduce(Record key, Iterator<Record> values, TaskContext context) throws IOException {
-        long count = 0;
-        while (values.hasNext()) {
+    	double switch_pr=0;
+    	while (values.hasNext()) {
             Record val = values.next();
-            count += val.getBigint(0);
+            switch_pr+=val.getDouble("pr");
         }
-        result.set(0, key.get(0));
-        result.set(1, count);
-        context.write(result);
+		output.set(0, key.getString("itemfrom"));
+		output.set(1, key.getString("itemto"));
+        output.set(2, switch_pr);
+        context.write(output);
     }
 
     public void cleanup(TaskContext arg0) throws IOException {
