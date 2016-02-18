@@ -1,0 +1,3 @@
+project=local
+table=itemComp
+columns=itemfrom:string,itemto:string,pr:double
