@@ -1,0 +1,3 @@
+project=local
+table=brandGraph
+columns=brandfrom:string,brandto:string,pr:double

@@ -21,9 +21,9 @@ public class MyMapper implements Mapper {
 
 	public void map(long recordNum, Record record, TaskContext context)
 			throws IOException {
-		double brandToSessionPr = record.getDouble(2);
+		double brandToSessionPr = record.getDouble(1);
 		String brandfrom=record.getString(0);
-		for (String temp : record.getString(3).split(",")) {
+		for (String temp : record.getString(2).split(",")) {
 			String[] brandAndPr = temp.split(":");
 			key.set("brandfrom",brandfrom);
 			key.set("brandto",brandAndPr[0]);

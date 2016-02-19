@@ -1,3 +1,0 @@
-project=local
-table=itemtoitemlist
-columns=item:string,itemtosessionpr:double,toitemlist:string
