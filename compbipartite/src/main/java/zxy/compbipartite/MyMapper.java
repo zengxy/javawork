@@ -22,7 +22,7 @@ public class MyMapper implements Mapper {
     	key.set("user_id",record.getString(1));
     	key.set("category",record.getString(3));
     	
-    	value.set("item_id",record.getString(2));
+    	value.set("brand_id",record.getString(6));
     	value.set("action",record.getString(4));
         context.write(key, value);
     }

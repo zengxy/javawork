@@ -15,10 +15,11 @@ import java.util.Map;
 /**
  * Reducer模板。请用真实逻辑替换模板内容
  */
+//以brand作为comp的版本
 public class MyReducer implements Reducer {
 	private Record output;
-	//不同的item的最小数目
-	private final int MIN_DIFFERENT_ITEM=2;
+	//不同的brand的最小数目
+	private final int MIN_DIFFERENT_BRAND=1;
 	//可比较SESSION的最小长度(此处session为session中同样类别产品组成的子session)
 	private final int MIN_SESSION_LEN=5;
 	
@@ -32,30 +33,30 @@ public class MyReducer implements Reducer {
 			throws IOException {
 
 		// List<Object[]> rList=new ArrayList<Object[]>();
-		Map<String, Integer> item_count = new HashMap<String, Integer>();
+		Map<String, Integer> brand_count = new HashMap<String, Integer>();
 		int sessionLen = 0;
 		int numOfDifferentItem = 0;
 		while (values.hasNext()) {
 			Record val = values.next();
-			String item = val.getString("item_id");
+			String brand = val.getString("brand_id");
 			sessionLen++;
-			if (item_count.keySet().contains(item))
-				item_count.put(item, item_count.get(item) + 1);
+			if (brand_count.keySet().contains(brand))
+				brand_count.put(brand, brand_count.get(brand) + 1);
 			else {
-				item_count.put(item, 1);
+				brand_count.put(brand, 1);
 				numOfDifferentItem++;
 			}
 		}
 
-		if(numOfDifferentItem < MIN_DIFFERENT_ITEM || sessionLen < MIN_SESSION_LEN )
-			return;
+		if(numOfDifferentItem < MIN_DIFFERENT_BRAND || sessionLen < MIN_SESSION_LEN )
+			return;;
 		
 		
-		for (String item : item_count.keySet()) {
+		for (String brand : brand_count.keySet()) {
 			output.set(0,key.getString("user_id")+"_"+key.getBigint("session").toString()+"_"+key.getString("category"));
 			output.set(1,sessionLen);
-			output.set(2,item);
-			output.set(3,item_count.get(item));
+			output.set(2,brand);
+			output.set(3,brand_count.get(brand));
 			context.write(output);
 		}
 	}

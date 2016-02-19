@@ -13,7 +13,7 @@
 
     <!--task-->
     <mapOutputKey>session:bigint,user_id:string,category:string</mapOutputKey>
-    <mapOutputValue>item_id:string,action:string</mapOutputValue>
+    <mapOutputValue>brand_id:string,action:string</mapOutputValue>
     <!--
     <partitionColumns>col1,col2</partitionColumns>
     <outputKeySortColumns>col1,col2</outputKeySortColumns>
