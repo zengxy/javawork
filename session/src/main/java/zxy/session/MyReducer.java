@@ -81,7 +81,6 @@ public class MyReducer implements Reducer {
 							output.set(6, rList.get(j)[4].toString());
 							output.set(7, rList.get(j)[5].toString());
 							context.write(output);
-
 						}
 						sessionID++;
 					}

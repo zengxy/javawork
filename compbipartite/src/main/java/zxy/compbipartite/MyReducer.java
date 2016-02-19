@@ -34,7 +34,7 @@ public class MyReducer implements Reducer {
 
 		// List<Object[]> rList=new ArrayList<Object[]>();
 		Map<String, Integer> brand_count = new HashMap<String, Integer>();
-		int sessionLen = 0;
+		int sessionLen = 0; 
 		int numOfDifferentItem = 0;
 		while (values.hasNext()) {
 			Record val = values.next();
