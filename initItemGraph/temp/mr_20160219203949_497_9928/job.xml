@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><configuration>
+<property><name>odps.mapred.input.desc</name><value>[{"tblName":"brandtobrandlist","partSpec":{},"label":"__default__"}]</value></property>
+<property><name>odps.mapred.map.class</name><value>zxy.initItemGraph.MyMapper</value></property>
+<property><name>odps.mapred.job.name</name><value>mr_20160219203949_497_9928</value></property>
+<property><name>odps.mapred.mapoutput.key.schema</name><value>brandfrom:STRING,brandto:STRING</value></property>
+<property><name>odps.mapred.mapoutput.value.schema</name><value>pr:DOUBLE</value></property>
+<property><name>odps.mapred.output.desc</name><value>[{"tblName":"brandGraph","partSpec":{},"label":"__default__"}]</value></property>
+<property><name>odps.mapred.reduce.class</name><value>zxy.initItemGraph.MyReducer</value></property>
+</configuration>
