@@ -12,7 +12,7 @@
     <reducer>zxy.initItemGraph.MyReducer</reducer>
 
     <!--task-->
-    <mapOutputKey>itemfrom:string,itemto:string</mapOutputKey>
+    <mapOutputKey>brandfrom:string,brandto:string</mapOutputKey>
     <mapOutputValue>pr:double</mapOutputValue>
     <!--
     <partitionColumns>col1,col2</partitionColumns>
@@ -27,10 +27,10 @@
     <!-- tables -->
     <inputTables>
         <table>
-            <name>itemtoitemlist</name>
+            <name>brandtobrandlist</name>
         </table>
     </inputTables>
     <outputTable>
-        <name>itemGraph</name>
+        <name>brandGraph</name>
     </outputTable>
 </mapred>

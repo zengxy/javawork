@@ -8,6 +8,8 @@ import java.io.IOException;
 /**
  * Mapper模板。请用真实逻辑替换模板内容
  */
+
+//以brand作为comp的branch
 public class MyMapper implements Mapper {
 	private Record key;
 	private Record value;
@@ -19,14 +21,14 @@ public class MyMapper implements Mapper {
 
 	public void map(long recordNum, Record record, TaskContext context)
 			throws IOException {
-		double itemToSessionPr = record.getDouble(2);
-		String itemfrom=record.getString(0);
+		double brandToSessionPr = record.getDouble(2);
+		String brandfrom=record.getString(0);
 		for (String temp : record.getString(3).split(",")) {
-			String[] itemAndPr = temp.split(":");
-			key.set("itemfrom", itemfrom);
-			key.set("itemto",itemAndPr[0]);
+			String[] brandAndPr = temp.split(":");
+			key.set("brandfrom",brandfrom);
+			key.set("brandto",brandAndPr[0]);
 			
-			value.set("pr",(Double.parseDouble(itemAndPr[1]))*itemToSessionPr);
+			value.set("pr",(Double.parseDouble(brandAndPr[1]))*brandToSessionPr);
 			context.write(key,value);
 		}
 	}
