@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><configuration>
+<property><name>odps.mapred.input.desc</name><value>[{"tblName":"loginfo","partSpec":{},"label":"__default__"}]</value></property>
+<property><name>odps.mapred.map.class</name><value>zxy.session.MyMapper</value></property>
+<property><name>odps.mapred.job.name</name><value>mr_20160108181015_241_3224</value></property>
+<property><name>odps.mapred.mapoutput.key.schema</name><value>user_id:STRING</value></property>
+<property><name>odps.mapred.mapoutput.value.schema</name><value>item_id:STRING,category:STRING,action:STRING,vtime:STRING,brand_id:STRING,seller_id:STRING</value></property>
+<property><name>odps.mapred.output.desc</name><value>[{"tblName":"sessionforcomp","partSpec":{},"label":"__default__"}]</value></property>
+<property><name>odps.mapred.reduce.class</name><value>zxy.session.MyReducer</value></property>
+</configuration>

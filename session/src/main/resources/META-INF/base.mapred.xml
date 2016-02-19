@@ -10,7 +10,6 @@
     <jobLauncher>zxy.session.JobLauncher</jobLauncher>
     <mapper>zxy.session.MyMapper</mapper>
     <reducer>zxy.session.MyReducer</reducer>
-    <combiner>zxy.session.MyCombiner</combiner>
 
     <!--task-->
     <mapOutputKey>user_id:string</mapOutputKey>
@@ -32,6 +31,6 @@
         </table>
     </inputTables>
     <outputTable>
-        <name></name>
+        <name>sessionforcomp</name>
     </outputTable>
 </mapred>
