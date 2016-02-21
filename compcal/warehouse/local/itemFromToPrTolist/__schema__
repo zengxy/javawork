@@ -1,3 +1,0 @@
-project=local
-table=itemFromToPrTolist
-columns=itemfrom:string,itemto:string,pr:double,toitemlist:string

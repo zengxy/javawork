@@ -22,10 +22,10 @@ public class MyReducer implements Reducer {
             Record val = values.next();
             switch_pr+=val.getDouble("pr");
         }
-		output.set(0, key.getString("itemfrom"));
-		output.set(1, key.getString("itemto"));
+		output.set(0, key.getString("brandfrom"));
+		output.set(1, key.getString("brandto"));
 		
-		if(key.getString("itemfrom").equals(key.getString("itemto")))
+		if(key.getString("brandfrom").equals(key.getString("brandto")))
 			switch_pr = (1-alpha)*switch_pr + alpha;
 		else
 			switch_pr = (1-alpha)*switch_pr;

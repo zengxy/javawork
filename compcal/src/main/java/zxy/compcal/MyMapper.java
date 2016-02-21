@@ -19,17 +19,16 @@ public class MyMapper implements Mapper {
     }
 
     public void map(long recordNum, Record record, TaskContext context) throws IOException {
-		double itemFromToPr = record.getDouble(2);
-		String itemfrom=record.getString(0);
+		double brandFromToPr = record.getDouble(2);
+		String brandfrom=record.getString(0);
 		for (String temp : record.getString(3).split(",")) {
-			String[] itemAndPr = temp.split(":");
-			key.set("itemfrom", itemfrom);
-			key.set("itemto",itemAndPr[0]);
+			String[] brandAndPr = temp.split(":");
+			key.set("brandfrom", brandfrom);
+			key.set("brandto",brandAndPr[0]);
 			
-			value.set("pr",(Double.parseDouble(itemAndPr[1]))*itemFromToPr);
+			value.set("pr",(Double.parseDouble(brandAndPr[1]))*brandFromToPr);
 			context.write(key,value);
 		}
-		
 		
         context.write(key, value);
     }
