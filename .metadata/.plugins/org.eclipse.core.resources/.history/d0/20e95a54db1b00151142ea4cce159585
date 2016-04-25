@@ -1,0 +1,16 @@
+package test;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class test2 {
+	public static void main(String[] args) {
+	    JLabel mainJLabel = new JLabel();
+	    JPanel mainJPanel = new JPanel();
+	    JButton commit = new JButton();
+	    
+	    
+	    
+	}
+}

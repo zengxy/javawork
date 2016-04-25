@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;normofcomp/warehouse/local/item_switch_normlized&apos; to &apos;item_switch_normalized&apos;" description="Rename resource &apos;item_switch_normlized&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="warehouse/local/item_switch_normlized" name="item_switch_normalized" stamp="1448968971918" updateReferences="true"/>
+</session>

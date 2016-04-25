@@ -1,0 +1,13 @@
+package studentframe.work;
+
+import javax.swing.JFrame;
+
+public class commitWork extends JFrame {
+	
+	private String studentID;
+	
+	public commitWork(String studentID) {
+		// TODO Auto-generated constructor stub
+		
+	}
+}

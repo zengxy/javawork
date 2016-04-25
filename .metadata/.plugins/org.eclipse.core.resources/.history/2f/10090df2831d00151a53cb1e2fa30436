@@ -1,0 +1,76 @@
+package studentframe.teacherAssistance;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Vector;
+
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
+import jdbc.DbManager;
+
+public class answerQuestion extends JFrame {
+	
+	JScrollPane mainJScrollPane = new JScrollPane();
+	JTable questionTable = new JTable();
+	public answerQuestion() {
+		// TODO Auto-generated constructor stub	
+		try {
+			jbInit();
+			questionTable.setModel(this
+					.refreshModel("select problemname,answer from problem"));
+			questionTable.setEnabled(false);
+            questionTable.getTableHeader().setReorderingAllowed(false);  //设置表头不能移动
+
+		} catch (Exception exception) {
+			exception.printStackTrace();
+		}
+		
+	}
+
+	private void jbInit() {
+		// TODO Auto-generated method stub
+		mainJScrollPane.getViewport().add(questionTable);
+		this.add(mainJScrollPane);
+		this.setTitle("Q&A");
+	}
+	
+	private DefaultTableModel refreshModel(String sql) {
+		// TODO Auto-generated method stub
+		Vector data = new Vector();
+		Vector head = new Vector();
+		head.add("问题");
+		head.add("答案");
+		DefaultTableModel model = new DefaultTableModel(public ); // 创建一个模板
+
+		new DefaultTableModel(String[][]{{"12","12"},{"12","12"}},new String[]{"列1","列2"}){
+		     public boolean isCellEditable(int rowindex,int colindex){
+		        if (colindex==1) return false;   //设置第二列只读
+		        return true;                     //其他列可以修改
+		}
+		}
+		
+		
+		DbManager db = new DbManager();
+		ResultSet rs = db.query(sql);
+
+		try {
+			while (rs.next()) {
+				Vector v = new Vector();
+				v.add(rs.getString(1));
+				v.add(rs.getString(2));
+				data.add(v);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+
+		model.setDataVector(data, head);
+		return model;
+	}
+}

@@ -1,0 +1,149 @@
+package studentframe.work;
+
+import java.awt.Color;
+import java.awt.GridLayout;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+
+import jdbc.DbManager;
+
+public class commitWork extends JFrame {
+	
+	JPanel mainJPanel = new JPanel();
+
+	JLabel workTitleJLabel = new JLabel("作业名");
+	JTextArea workTitleTextArea = new JTextArea();
+
+	JLabel workJLabel = new JLabel("作业");
+	JTextArea workTextArea = new JTextArea();
+	
+	JLabel courseLabel = new JLabel("课程编号");
+	JComboBox<String> courseIDBox = new JComboBox<String>();
+
+	JLabel blanklaJLabel = new JLabel(" ");
+	JButton commitButton = new JButton("提交");
+
+	private String studentID;
+	
+	public commitWork(String studentID) {
+		// TODO Auto-generated constructor stub
+		this.setTitle("提交作业");
+		this.studentID = studentID;
+
+		mainJPanel.setLayout(new GridLayout(4, 2));
+
+		workTitleTextArea.setTabSize(4);
+		workTitleTextArea.setLineWrap(true);// 激活自动换行功能
+		workTitleTextArea.setWrapStyleWord(true);// 激活断行不断字功能
+		workTitleTextArea.setBackground(Color.white);
+
+		workTextArea.setTabSize(4);
+		workTextArea.setLineWrap(true);// 激活自动换行功能
+		workTextArea.setWrapStyleWord(true);// 激活断行不断字功能
+		workTextArea.setBackground(Color.white);
+		
+		List<String> courses = getCourses();
+		for (String course : courses)
+			courseIDBox.addItem(course);
+
+		mainJPanel.add(workTitleJLabel);
+		mainJPanel.add(workTitleTextArea);
+		
+		mainJPanel.add(workJLabel);
+		mainJPanel.add(workTextArea);
+
+		mainJPanel.add(courseLabel);
+		mainJPanel.add(courseIDBox);
+
+		mainJPanel.add(blanklaJLabel);
+
+		commitButton
+				.addMouseListener(new ask_commit_Button_actionAdapter(this));
+
+		mainJPanel.add(commitButton);
+
+		this.add(mainJPanel);
+
+	}
+	
+	
+	private List<String> getCourses() {
+		List<String> courses = new ArrayList<String>();
+		DbManager db = new DbManager();
+		String sqlQuery = "select courseID from course";
+		ResultSet rs = db.query(sqlQuery);
+
+		rs = db.query(sqlQuery);
+
+		try {
+			while (rs.next())
+				courses.add(rs.getString(1));
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return courses;
+	}
+
+
+	public void commitButtonClickAction() {
+		String courseID = courseIDBox.getSelectedItem().toString();
+		String workTitle = workTitleTextArea.getText();
+		String workText=workTextArea.getText();
+
+		String sqlGetNum = "select max(worknum) from homework";
+		DbManager db = new DbManager();
+		ResultSet rs = db.query(sqlGetNum);
+		try {
+			int worknum = 0;
+			if (rs.next())
+				worknum = Integer.parseInt(rs.getString(1)) + 1;
+
+			String sqlQuery = "insert into homework(worknum,courseID,stuID,workname,download) values('"
+					+ Integer.toString(worknum)
+					+ "','"
+					+ question
+					+ "','"
+					+ courseID + "','" + this.studentID + "')";
+			db.query(sqlQuery);
+			
+			JOptionPane.showMessageDialog(null,"提问成功！","消息提示",JOptionPane.INFORMATION_MESSAGE);
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			JOptionPane.showMessageDialog(null,"提问失败！","消息提示",JOptionPane.ERROR_MESSAGE);
+
+		}
+
+	}
+
+}
+}
+
+
+class ask_commit_Button_actionAdapter extends MouseAdapter {
+	private commitWork adaptee;
+
+	ask_commit_Button_actionAdapter(commitWork adaptee) {
+		this.adaptee = adaptee;
+	}
+
+	public void mouseClicked(MouseEvent e) {
+		if (e.getButton() == MouseEvent.BUTTON1)
+			adaptee.commitButtonClickAction();
+	}
+}

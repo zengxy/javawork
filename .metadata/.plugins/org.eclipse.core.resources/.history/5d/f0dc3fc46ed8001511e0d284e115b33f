@@ -1,0 +1,3 @@
+project=local
+table=brandFromToPrTolist
+columns=brandfrom:string,itemto:string,pr:double,toitemlist:string

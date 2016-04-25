@@ -1,0 +1,4 @@
+project=local
+table=graph_in
+columns=vertexId:BIGINT,edges:STRING
+partitions=dt:STRING

@@ -1,0 +1,9 @@
+package studentframe.work;
+
+import javax.swing.JFrame;
+
+public class getWork extends JFrame {
+	public getWork() {
+		// TODO Auto-generated constructor stub
+	}
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;frqauc/warehouse/local/recencyAUC&apos; to &apos;frqauc&apos;" description="Rename resource &apos;recencyAUC&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="warehouse/local/recencyAUC" name="frqauc" stamp="1433141920241" updateReferences="true"/>
+</session>

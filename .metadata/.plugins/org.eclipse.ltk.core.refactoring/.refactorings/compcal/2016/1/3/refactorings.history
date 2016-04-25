@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;compcal/warehouse/local/wordcount_in&apos; to &apos;itemFromToPrTolist&apos;" description="Rename resource &apos;wordcount_in&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="warehouse/local/wordcount_in" name="itemFromToPrTolist" stamp="1452690533804" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;compcal/warehouse/local/wordcount_out&apos; to &apos;itemComp&apos;" description="Rename resource &apos;wordcount_out&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="warehouse/local/wordcount_out" name="itemComp" stamp="1452694639445" updateReferences="true"/>
+</session>

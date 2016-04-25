@@ -1,0 +1,74 @@
+package studentframe.work;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Vector;
+
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
+import jdbc.DbManager;
+
+public class getWork extends JFrame {
+	private String studentID;
+	JScrollPane mainJScrollPane = new JScrollPane();
+	JTable workTable = new JTable();
+	
+	public getWork(String studentID) {
+		// TODO Auto-generated constructor stub
+		
+		try {
+			jbInit();
+			workTable.setModel(this
+					.refreshModel("select courseID,stuID,workname,download from homework"));
+			workTable.setEnabled(false);
+            workTable.getTableHeader().setReorderingAllowed(false);  //设置表头不能移动
+
+		} catch (Exception exception) {
+			exception.printStackTrace();
+		}
+		
+	}
+	
+	private void jbInit() throws Exception {
+		mainJScrollPane.getViewport().add(workTable);
+		this.add(mainJScrollPane);
+		this.setTitle("Q&A");
+	}
+	
+	private DefaultTableModel refreshModel(String sql) {
+		Vector data = new Vector();
+		Vector head = new Vector();
+		
+		head.add("课程号");
+		head.add("学号");
+		head.add("问题");
+		head.add("答案");
+		DefaultTableModel model = new DefaultTableModel(); // 创建一个模板
+
+		DbManager db = new DbManager();
+		ResultSet rs = db.query(sql);
+
+		try {
+			while (rs.next()) {
+				Vector v = new Vector();
+				v.add(rs.getString(1));
+				v.add(rs.getString(2));
+				data.add(v);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		model.setDataVector(data, head);
+		return model;
+	}
+	
+
+
+
+
+}

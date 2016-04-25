@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;initItemGraph/warehouse/local/itemGraph&apos; to &apos;brandGraph&apos;" description="Rename resource &apos;itemGraph&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="warehouse/local/itemGraph" name="brandGraph" stamp="1455885069118" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;initItemGraph/warehouse/local/itemtoitemlist&apos; to &apos;brandtobrandlist&apos;" description="Rename resource &apos;itemtoitemlist&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="warehouse/local/itemtoitemlist" name="brandtobrandlist" stamp="1455885154644" updateReferences="true"/>
+</session>

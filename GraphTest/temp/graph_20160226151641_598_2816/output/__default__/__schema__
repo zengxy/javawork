@@ -1,0 +1,4 @@
+project=local
+table=graph_out
+columns=targetVertexId:BIGINT,length:BIGINT
+partitions=dt:STRING

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;wyjsession/warehouse/local/session&apos; to &apos;session123&apos;" description="Rename resource &apos;session&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="warehouse/local/session" name="session123" stamp="1436928507171" updateReferences="true"/>
+</session>

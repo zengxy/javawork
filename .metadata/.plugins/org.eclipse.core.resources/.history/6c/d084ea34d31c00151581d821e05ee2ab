@@ -1,0 +1,33 @@
+package studentframe.work;
+
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+
+public class getWork extends JFrame {
+	private String studentID;
+	JScrollPane mainJScrollPane = new JScrollPane();
+	JTable workTable = new JTable();
+	
+	public getWork(String studentID) {
+		// TODO Auto-generated constructor stub
+		
+		try {
+			jbInit();
+			workTable.setModel(this
+					.refreshModel("select problemname,answer from problem"));
+			workTable.setEnabled(false);
+            workTable.getTableHeader().setReorderingAllowed(false);  //设置表头不能移动
+
+		} catch (Exception exception) {
+			exception.printStackTrace();
+		}
+		
+	}
+	
+	private void jbInit() throws Exception {
+		mainJScrollPane.getViewport().add(workTable);
+		this.add(mainJScrollPane);
+		this.setTitle("Q&A");
+	}
+}

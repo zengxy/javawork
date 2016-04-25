@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;segment/warehouse/local/log&apos; to &apos;loginfo&apos;" description="Rename resource &apos;log&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="warehouse/local/log" name="loginfo" stamp="1432977094099" updateReferences="true"/>
+</session>

@@ -1,0 +1,3 @@
+project=local
+table=brandtobrandlist
+columns=brand:STRING,brandtosessionpr:DOUBLE,tobrandlist:STRING

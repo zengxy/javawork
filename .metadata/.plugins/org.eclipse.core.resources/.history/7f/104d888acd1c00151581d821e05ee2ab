@@ -1,0 +1,7 @@
+package studentframe.work;
+
+import javax.swing.JFrame;
+
+public class commitWork extends JFrame {
+
+}

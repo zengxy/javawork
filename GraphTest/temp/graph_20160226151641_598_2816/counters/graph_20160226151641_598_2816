@@ -1,0 +1,6 @@
+User defined counters: 4
+	com.aliyun.odps.graph.local.COUNTER
+		TASK_INPUT_BYTE=69
+		TASK_INPUT_RECORD=5
+		TASK_OUTPUT_BYTE=25
+		TASK_OUTPUT_RECORD=5

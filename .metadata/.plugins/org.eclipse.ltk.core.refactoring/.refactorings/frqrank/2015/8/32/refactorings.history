@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;result&apos; in &apos;zxy.frqrank.MyReducer&apos; to &apos;output&apos;&#x0D;&#x0A;- Original project: &apos;frqrank&apos;&#x0D;&#x0A;- Original element: &apos;zxy.frqrank.MyReducer.result&apos;&#x0D;&#x0A;- Renamed element: &apos;zxy.frqrank.MyReducer.output&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;result&apos;" flags="589826" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src\/main\/java&lt;zxy.frqrank{MyReducer.java[MyReducer^result" name="output" references="true" setter="false" stamp="1438504246717" textual="false" version="1.0"/>
+</session>

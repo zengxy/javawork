@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+		<list key="ciManagementUrl">
+		</list>
+		<list key="ciManagementSystem">
+		</list>
+		<list key="issueManagementSystem">
+		</list>
+		<list key="issueManagementUrl">
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.preferences.LocalArchetypeCatalogDialog">
+	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.dialogs.MavenRepositorySearchDialog">
+		<item value="480" key="width"/>
+		<item value="480" key="x"/>
+		<item value="37" key="y"/>
+		<item value="590" key="height"/>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<item value="http://maven.sdk.de.yushanfang.com/SNAPSHOT" key="catalog"/>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenModuleWizardParentPage">
+		<list key="moduleName">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.wizards.CustomArchetypeDialog">
+	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.preferences.RemoteArchetypeCatalogDialog">
+		<list key="catalogUrl">
+			<item value="http://maven.sdk.de.yushanfang.com/SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="D:\javawork\switch_pr_iteration"/>
+			<item value="D:\javawork\test"/>
+			<item value="D:\javawork\utilitytest"/>
+			<item value="D:\javawork\lftest"/>
+			<item value="D:\javawork\poprandtest"/>
+			<item value="D:\javawork\lfstate1"/>
+			<item value="D:\javawork\segment"/>
+			<item value="D:\javawork\frqresult"/>
+			<item value="D:\javawork\frq1"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+			<item value="zxy.GraphTest"/>
+			<item value="zxy.aaa"/>
+			<item value="zxy.graphtest"/>
+			<item value="zxy.compcal"/>
+			<item value="zxy.initItemGraph"/>
+			<item value="zxy.compbipartite"/>
+			<item value="zxy.session"/>
+			<item value="zxy.normofcomp"/>
+			<item value="zxy.comp"/>
+			<item value="zxy.frqrank"/>
+			<item value="zxy.knnresult"/>
+			<item value="lfr.lfrstate2"/>
+		</list>
+		<list key="groupId">
+			<item value="zxy"/>
+			<item value="lfr"/>
+		</list>
+		<list key="artifactId">
+			<item value="GraphTest"/>
+			<item value="aaa"/>
+			<item value="graphtest"/>
+			<item value="compcal"/>
+			<item value="initItemGraph"/>
+			<item value="compbipartite"/>
+			<item value="session"/>
+			<item value="normofcomp"/>
+			<item value="comp"/>
+			<item value="frqrank"/>
+			<item value="knnresult"/>
+			<item value="lfrstate2"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+</section>

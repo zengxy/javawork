@@ -1,0 +1,153 @@
+package studentframe;
+
+import java.awt.*;
+
+import javax.swing.*;
+import java.awt.Rectangle;
+import java.awt.Font;
+import javax.swing.BorderFactory;
+import java.sql.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import dao.StudentDAO;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyAdapter;
+
+
+public class ExamSearch extends JFrame
+{
+    StudentDAO dao=new StudentDAO();
+    public ExamSearch() {
+        try {
+            jbInit();
+            table.setModel(dao.refresh("select * from exam"));
+            table.setSelectionMode(0);  //设置只能选择一条记录
+            table.getTableHeader().setReorderingAllowed(false);  //设置表头不能移动
+           } catch (Exception exception)
+           {
+            exception.printStackTrace();
+           }
+}
+
+
+    private void jbInit() throws Exception {
+        getContentPane().setLayout(null);
+        lab.setFont(new java.awt.Font("黑体", Font.BOLD, 20));
+        lab.setText("考 试 成 绩 查 询");
+        lab.setBounds(new Rectangle(81, 3, 214, 46));
+        jPanel1.setBorder(BorderFactory.createEtchedBorder());
+        jPanel1.setBounds(new Rectangle(20, 48, 360, 75));
+        jPanel1.setLayout(null);
+        but1.setBounds(new Rectangle(258, 25, 74, 28));
+        but1.setFont(new java.awt.Font("楷体_GB2312", Font.PLAIN, 14));
+        but1.setText("查询");
+        but1.addActionListener(new ExamSearch_but1_actionAdapter(this));
+        lab1.setFont(new java.awt.Font("楷体_GB2312", Font.PLAIN, 14));
+
+        lab1.setText("学生编号：");
+        lab1.setBounds(new Rectangle(21, 21, 71, 35));
+        search.setBounds(new Rectangle(90, 25, 137, 28));
+        search.addKeyListener(new ExamSearch_search_keyAdapter(this));
+        jScrollPane1.setBounds(new Rectangle(17, 143, 360, 209));
+        but2.setBounds(new Rectangle(278, 367, 74, 28));
+        but2.setFont(new java.awt.Font("楷体_GB2312", Font.PLAIN, 14));
+        but2.setText("退出");
+        but2.addActionListener(new ExamSearch_but2_actionAdapter(this));
+
+        this.setTitle("成绩查询");
+        jPanel1.add(but1);
+        jPanel1.add(lab1);
+        jPanel1.add(search);
+        this.getContentPane().add(jScrollPane1);
+        this.getContentPane().add(but2);
+        jScrollPane1.getViewport().add(table);
+        this.getContentPane().add(lab);
+        this.getContentPane().add(jPanel1);
+        this.setUndecorated(true);//不显示Windows标题栏
+        this.getRootPane().setWindowDecorationStyle(JRootPane.FRAME);  //显示java 标题栏
+    }
+
+    JLabel lab = new JLabel();
+    JPanel jPanel1 = new JPanel();
+    JButton but1 = new JButton();
+    JLabel lab1 = new JLabel();
+    JTextField search = new JTextField();
+    JScrollPane jScrollPane1 = new JScrollPane();
+    JTable table = new JTable();
+    JButton but2 = new JButton();
+
+
+    public void but1_actionPerformed(ActionEvent e) {
+        ResultSet rs=dao.query("select * from exam where stuID='"+search.getText().trim()+"'");
+        if(search.getText().trim().equals(""))
+         {
+          dao.refresh("select * from exam");
+         }else
+         {
+            try {
+                if (rs.next())
+                {
+                    dao.refresh("select * from exam where stuID='" +search.getText().trim() + "'");
+                }else
+                {
+                 JOptionPane.showMessageDialog(this,"该学生编号不存在");
+                 search.setText("");
+                }
+            } catch (SQLException ex)
+            {
+             System.out.println(ex.getMessage());
+            }
+         }
+
+
+    }
+
+    public void but2_actionPerformed(ActionEvent e) {
+
+        this.setVisible(false);
+    }
+
+    public void search_keyPressed(KeyEvent e) {
+        if(e.getKeyChar()=='\n')         // \n 回车
+        {
+        but1_actionPerformed(null);
+        }
+    }
+}
+
+
+class ExamSearch_search_keyAdapter extends KeyAdapter {
+    private ExamSearch adaptee;
+    ExamSearch_search_keyAdapter(ExamSearch adaptee) {
+        this.adaptee = adaptee;
+    }
+
+    public void keyPressed(KeyEvent e) {
+        adaptee.search_keyPressed(e);
+    }
+}
+
+
+class ExamSearch_but2_actionAdapter implements ActionListener {
+    private ExamSearch adaptee;
+    ExamSearch_but2_actionAdapter(ExamSearch adaptee) {
+        this.adaptee = adaptee;
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        adaptee.but2_actionPerformed(e);
+    }
+}
+
+
+class ExamSearch_but1_actionAdapter implements ActionListener {
+    private ExamSearch adaptee;
+    ExamSearch_but1_actionAdapter(ExamSearch adaptee) {
+        this.adaptee = adaptee;
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        adaptee.but1_actionPerformed(e);
+    }
+}
+

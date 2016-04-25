@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;frqq/warehouse/local/wordcount_in&apos; to &apos;sessioninfo&apos;" description="Rename resource &apos;wordcount_in&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="warehouse/local/wordcount_in" name="sessioninfo" stamp="1433064619576" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;frqq/warehouse/local/wordcount_out&apos; to &apos;frqqresult&apos;" description="Rename resource &apos;wordcount_out&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="warehouse/local/wordcount_out" name="frqqresult" stamp="1433064779563" updateReferences="true"/>
+</session>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;item_list&apos; in &apos;zxy.frq1.frq2Reduce.reduce(...)&apos; to &apos;item_set&apos;&#x0D;&#x0A;- Original project: &apos;frq1&apos;&#x0D;&#x0A;- Original element: &apos;zxy.frq1.frq2Reduce.reduce(Record, Iterator&lt;Record&gt;, TaskContext).item_list&apos;&#x0D;&#x0A;- Renamed element: &apos;item_list&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;item_list&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src\/main\/java&lt;zxy.frq1{frq2Reduce.java[frq2Reduce~reduce~QRecord;~QIterator\&lt;QRecord;&gt;;~QTaskContext;@item_list!614!657!626!634!QSet\&lt;QString;&gt;;!0!false" name="item_set" references="true" stamp="1432990153423" version="1.0"/>
+</session>

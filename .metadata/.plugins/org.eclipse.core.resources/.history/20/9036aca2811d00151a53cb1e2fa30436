@@ -1,0 +1,9 @@
+package studentframe.teacherAssistance;
+
+import javax.swing.JFrame;
+
+public class answerQuestion extends JFrame {
+	public answerQuestion() {
+		// TODO Auto-generated constructor stub
+	}
+}

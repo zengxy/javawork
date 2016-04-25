@@ -1,0 +1,68 @@
+package studentframe.work;
+
+import java.awt.Color;
+import java.awt.GridLayout;
+import java.util.List;
+
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+
+public class commitWork extends JFrame {
+	
+	JPanel mainJPanel = new JPanel();
+
+	JLabel workTitleJLabel = new JLabel("作业名");
+	JTextArea workTitleTextArea = new JTextArea();
+
+	JLabel workJLabel = new JLabel("作业");
+	JTextArea workTextArea = new JTextArea();
+	
+	JLabel courseLabel = new JLabel("课程编号");
+	JComboBox<String> courseIDBox = new JComboBox<String>();
+
+	JLabel blanklaJLabel = new JLabel(" ");
+	JButton commitButton = new JButton("提交");
+
+	private String studentID;
+	
+	public commitWork(String studentID) {
+		// TODO Auto-generated constructor stub
+		this.setTitle("提交作业");
+		this.studentID = studentID;
+
+		mainJPanel.setLayout(new GridLayout(4, 2));
+
+		workTitleTextArea.setTabSize(4);
+		workTitleTextArea.setLineWrap(true);// 激活自动换行功能
+		workTitleTextArea.setWrapStyleWord(true);// 激活断行不断字功能
+		workTitleTextArea.setBackground(Color.white);
+
+		
+		
+		
+		
+		List<String> courses = getCourses();
+		for (String course : courses)
+			courseIDBox.addItem(course);
+
+		mainJPanel.add(workTitleJLabel);
+		mainJPanel.add(workTitleTextArea);
+
+		mainJPanel.add(courseLabel);
+		mainJPanel.add(courseIDBox);
+
+		mainJPanel.add(blanklaJLabel);
+
+		commitButton
+				.addMouseListener(new ask_commit_Button_actionAdapter(this));
+
+		mainJPanel.add(commitButton);
+
+		this.add(mainJPanel);
+
+	}
+}

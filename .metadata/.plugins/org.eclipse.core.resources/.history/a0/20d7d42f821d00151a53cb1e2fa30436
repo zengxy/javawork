@@ -1,0 +1,35 @@
+package studentframe.teacherAssistance;
+
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+
+public class answerQuestion extends JFrame {
+	
+	JScrollPane mainJScrollPane = new JScrollPane();
+	JTable questionTable = new JTable();
+	public answerQuestion() {
+		// TODO Auto-generated constructor stub	
+		try {
+			jbInit();
+			questionTable.setModel(this
+					.refreshModel("select problemname,answer from problem"));
+			questionTable.setEnabled(false);
+            questionTable.getTableHeader().setReorderingAllowed(false);  //设置表头不能移动
+
+		} catch (Exception exception) {
+			exception.printStackTrace();
+		}
+		
+	}
+
+	private Object refreshModel(String string) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private void jbInit() {
+		// TODO Auto-generated method stub
+		
+	}
+}

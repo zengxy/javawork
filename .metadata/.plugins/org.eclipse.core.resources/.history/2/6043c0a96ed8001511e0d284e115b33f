@@ -1,0 +1,3 @@
+project=local
+table=brandComp
+columns=itemfrom:string,itemto:string,pr:double

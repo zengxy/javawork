@@ -1,0 +1,64 @@
+package test;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Rectangle;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+
+public class test2 {
+	public static void main(String[] args) {
+
+		JFrame mainFrame = new JFrame("作业提交");
+		JPanel mainJPanel = new JPanel();
+	    JButton commitButton = new JButton();
+	    
+	    JLabel titleLabel = new JLabel("问题标题");
+	    JLabel questionLabel = new JLabel("问题内容");
+	    
+	    JTextArea textTitle=new JTextArea();	 
+	    JTextArea textQuestion=new JTextArea();
+	    
+	    
+
+	    titleLabel.setBounds(new Rectangle(100,100,20,20));
+	    mainJPanel.add(titleLabel);
+	    
+	    questionLabel.setBounds(new Rectangle(200,200,50,50));
+	    mainJPanel.add(questionLabel);
+	    
+	    mainFrame.add(JPanel)
+	       
+	    textTitle.setTabSize(4);
+	    textTitle.setFont(new Font("标楷体", Font.BOLD, 16));
+	    textTitle.setLineWrap(true);// 激活自动换行功能
+	    textTitle.setWrapStyleWord(true);// 激活断行不断字功能
+	    textTitle.setBackground(Color.pink);
+	    
+	    
+	    textQuestion.setTabSize(4);
+	    //textTitle.setFont(new Font("标楷体", Font.BOLD, 16));
+	    textQuestion.setLineWrap(true);// 激活自动换行功能
+	    textQuestion.setWrapStyleWord(true);// 激活断行不断字功能
+	    //textTitle.setBackground(Color.black);
+	    
+	    
+	   // mainFrame.add(commitButton);
+	   // mainFrame.add(textTitle);
+	    //mainFrame.add(textQuestion);
+	    
+	    
+	    
+	    
+	    mainFrame.setSize(400, 300);
+	    mainFrame.setLocation(400, 200);
+	    mainFrame.setVisible(true);
+	    mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+}

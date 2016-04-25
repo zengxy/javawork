@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;utilitytest/warehouse/local/utilitytestresult&apos; to &apos;model_init&apos;" description="Rename resource &apos;utilitytestresult&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="warehouse/local/utilitytestresult" name="model_init" stamp="1437538766687" updateReferences="true"/>
+</session>

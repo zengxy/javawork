@@ -1,0 +1,48 @@
+package studentframe.work;
+
+import java.awt.Color;
+import java.awt.GridLayout;
+import java.util.List;
+
+import javax.swing.JFrame;
+
+import studentframe.QA.ask_commit_Button_actionAdapter;
+
+public class commitWork extends JFrame {
+	
+	private String studentID;
+	
+	public commitWork(String studentID) {
+		// TODO Auto-generated constructor stub
+		this.setTitle("提交作业");
+		this.studentID = studentID;
+
+		mainJPanel.setLayout(new GridLayout(3, 2));
+
+		questionArea.setTabSize(4);
+		// questionArea.setFont(new Font("标楷体", Font.BOLD, 13));
+		questionArea.setLineWrap(true);// 激活自动换行功能
+		questionArea.setWrapStyleWord(true);// 激活断行不断字功能
+		questionArea.setBackground(Color.white);
+
+		List<String> courses = getCourses();
+		for (String course : courses)
+			courseIDBox.addItem(course);
+
+		mainJPanel.add(questionLabel);
+		mainJPanel.add(questionArea);
+
+		mainJPanel.add(courseLabel);
+		mainJPanel.add(courseIDBox);
+
+		mainJPanel.add(blanklaJLabel);
+
+		commitButton
+				.addMouseListener(new ask_commit_Button_actionAdapter(this));
+
+		mainJPanel.add(commitButton);
+
+		this.add(mainJPanel);
+
+	}
+}

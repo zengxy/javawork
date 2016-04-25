@@ -1,0 +1,3 @@
+project=local
+table=brandtobrandlist
+columns=brand:string,brandtosessionpr:double,toitemlist:string

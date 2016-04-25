@@ -1,0 +1,30 @@
+package studentframe.teacherAssistance;
+
+import javax.swing.JFrame;
+
+public class answerQuestion extends JFrame {
+	public answerQuestion() {
+		// TODO Auto-generated constructor stub	
+		try {
+			jbInit();
+			questionTable.setModel(this
+					.refreshModel("select problemname,answer from problem"));
+			questionTable.setEnabled(false);
+            questionTable.getTableHeader().setReorderingAllowed(false);  //设置表头不能移动
+
+		} catch (Exception exception) {
+			exception.printStackTrace();
+		}
+		
+	}
+
+	private Object refreshModel(String string) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private void jbInit() {
+		// TODO Auto-generated method stub
+		
+	}
+}

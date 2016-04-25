@@ -1,0 +1,307 @@
+package studentframe;
+
+import java.awt.*;
+
+import javax.swing.*;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.Font;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import jdbc.DbManager;
+import studentframe.QA.askQuestion;
+import studentframe.QA.getQuestion;
+import studentframe.exam.ExamSearch;
+import studentframe.work.commitWork;
+import studentframe.work.getWork;
+import util.DisplayFonts;
+import util.CenterFrame;
+
+public class StudentFrame extends JFrame {
+	private String studentID;
+
+	public StudentFrame(String studentID) {
+		try {
+			jbInit();
+			this.studentID = studentID;
+		} catch (Exception exception) {
+			exception.printStackTrace();
+		}
+	}
+
+	private void jbInit() throws Exception {
+		getContentPane().setLayout(null);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setFont(new java.awt.Font("宋体", Font.BOLD, 14));
+		this.setJMenuBar(jMenuBar1);
+		this.setTitle("教务管理系统");
+		menu1.setFont(new java.awt.Font("新宋体", Font.PLAIN, 13));
+		menu1.setText("系统");
+		menu2.setFont(new java.awt.Font("新宋体", Font.PLAIN, 13));
+		menu2.setText("成绩查询");
+		menuItem1.setFont(new java.awt.Font("新宋体", Font.PLAIN, 13));
+		menuItem1.setText("退出");
+		menuItem1.addActionListener(new StudentFrame_menuItem1_actionAdapter(
+				this));
+		menuItem2.setFont(new java.awt.Font("新宋体", Font.PLAIN, 13));
+		menuItem2.setText("查询");
+		menuItem2.addActionListener(new StudentFrame_menuItem2_actionAdapter(
+				this));
+
+		// add 答疑
+		menuQA.setFont(new java.awt.Font("新宋体", Font.PLAIN, 13));
+		menuQA.setText("答疑");
+
+		menuItemAsk.setFont(new java.awt.Font("新宋体", Font.PLAIN, 13));
+		menuItemAsk.setText("提交问题");
+		menuItemAsk
+				.addActionListener(new StuedntFrame_menuItemAsk_actionAdapter(
+						this));
+
+		menuItemGetQuestion.setFont(new java.awt.Font("新宋体", Font.PLAIN, 13));
+		menuItemGetQuestion.setText("查看问题");
+		menuItemGetQuestion
+				.addActionListener(new StuedntFrame_menuItemGetQuestion_actionAdapter(
+						this));
+
+		menuQA.add(menuItemAsk);
+		menuQA.add(menuItemGetQuestion);
+
+		// add 提交作业
+		menuCommitWork.setFont(new java.awt.Font("新宋体", Font.PLAIN, 13));
+		menuCommitWork.setText("提交作业");
+
+		menuItemCommitWork.setFont(new java.awt.Font("新宋体", Font.PLAIN, 13));
+		menuItemCommitWork.setText("提交");
+		menuItemCommitWork
+				.addActionListener(new StuedntFrame_menuItemCommitWork_actionAdapter(
+						this));
+
+		menuItemGetWork.setFont(new java.awt.Font("新宋体", Font.PLAIN, 13));
+		menuItemGetWork.setText("查看");
+		menuItemGetWork
+				.addActionListener(new StuedntFrame_menuItemGetWork_actionAdapter(
+						this));
+
+		menuCommitWork.add(menuItemCommitWork);
+		menuCommitWork.add(menuItemGetWork);
+		
+		//add 助教页面
+		menuTA.setFont(new java.awt.Font("新宋体", Font.PLAIN, 13));
+		menuTA.setText("助教");
+		
+		menuItemAnswer.setFont(new java.awt.Font("新宋体", Font.PLAIN, 13));
+		menuItemAnswer.setText("回答问题");
+		menuItemAnswer.addActionListener(new StudentFrame_menuItemAnswer_actionAdapter(this));
+		
+		menuTA.add(menuItemAnswer);
+		
+		jMenuBar1.add(menu1);
+		jMenuBar1.add(menu2);
+		jMenuBar1.add(menuQA);
+		jMenuBar1.add(menuCommitWork);
+		jMenuBar1.add(menuTA);
+		
+		menu1.add(menuItem1);
+		menu2.add(menuItem2);
+
+		jLabel1.setIcon(img1);
+		jLabel1.setBounds(new Rectangle(0, 0, 800, 545));
+		this.getContentPane().add(jLabel1);
+
+		this.setUndecorated(true);// 不显示Windows标题栏
+		this.getRootPane().setWindowDecorationStyle(JRootPane.PLAIN_DIALOG); // 显示java
+																				// 标题栏
+		this.setSize(800, 600);
+		CenterFrame.center(this); // 窗体居中
+		this.setVisible(true);
+		this.setResizable(false);
+
+	}
+
+	JMenuBar jMenuBar1 = new JMenuBar();
+	JMenu menu1 = new JMenu();
+	JMenu menu2 = new JMenu();
+	JMenuItem menuItem1 = new JMenuItem();
+	JMenuItem menuItem2 = new JMenuItem();
+	JLabel jLabel1 = new JLabel();
+	ImageIcon img1 = new ImageIcon(this.getClass().getResource(
+			"/img/studentFrame.jpg"));
+
+	// QA按钮
+	JMenu menuQA = new JMenu();
+	JMenuItem menuItemAsk = new JMenuItem();
+	JMenuItem menuItemGetQuestion = new JMenuItem();
+
+	// 提交作业按钮
+	JMenu menuCommitWork = new JMenu();
+	JMenuItem menuItemCommitWork = new JMenuItem();
+	JMenuItem menuItemGetWork = new JMenuItem();
+
+	//助教
+	JMenu menuTA= new JMenu();
+	JMenuItem menuItemAnswer = new JMenuItem();
+	
+	
+	public void menuItem1_actionPerformed(ActionEvent e) {
+		System.exit(0);
+	}
+
+	public void menuItem2_actionPerformed(ActionEvent e) {
+		DisplayFonts.initGlobalFontSetting("新字体", 13); // 将其放在窗体出来之前 即创建窗体对象之前
+		ExamSearch c = new ExamSearch();
+		c.setSize(400, 430);
+		c.setLocation(280, 130);
+		c.setVisible(true);
+		c.setResizable(false);
+	}
+
+	public void menuItemAsk() {
+		DisplayFonts.initGlobalFontSetting("新字体", 13); // 将其放在窗体出来之前 即创建窗体对象之前
+		askQuestion c = new askQuestion(this.studentID);
+		c.setSize(400, 430);
+		c.setLocation(280, 130);
+		c.setVisible(true);
+		c.setResizable(false);
+	}
+
+	public void menuItemGetQuestion() {
+		DisplayFonts.initGlobalFontSetting("新字体", 13); // 将其放在窗体出来之前 即创建窗体对象之前
+		getQuestion c = new getQuestion();
+		c.setSize(400, 430);
+		c.setLocation(280, 130);
+		c.setVisible(true);
+		c.setResizable(false);
+	}
+
+	public void menuItemCommitWork() {
+		DisplayFonts.initGlobalFontSetting("新字体", 13); // 将其放在窗体出来之前 即创建窗体对象之前
+		commitWork c = new commitWork(studentID);
+		c.setSize(400, 430);
+		c.setLocation(280, 130);
+		c.setVisible(true);
+		c.setResizable(false);
+	}
+
+	public void menuItemGetWork() {
+		DisplayFonts.initGlobalFontSetting("新字体", 13); // 将其放在窗体出来之前 即创建窗体对象之前
+		getWork c = new getWork(studentID);
+		c.setSize(400, 430);
+		c.setLocation(280, 130);
+		c.setVisible(true);
+		c.setResizable(false);
+
+	}
+
+}
+
+class StudentFrame_menuItem2_actionAdapter implements ActionListener {
+	private StudentFrame adaptee;
+	private ActionEvent e;
+
+	StudentFrame_menuItem2_actionAdapter(StudentFrame adaptee) {
+		this.adaptee = adaptee;
+	}
+
+	public void actionPerformed(ActionEvent actionEvent) {
+		adaptee.menuItem2_actionPerformed(e);
+	}
+}
+
+class StudentFrame_menuItem1_actionAdapter implements ActionListener {
+	private StudentFrame adaptee;
+
+	StudentFrame_menuItem1_actionAdapter(StudentFrame adaptee) {
+		this.adaptee = adaptee;
+	}
+
+	public void actionPerformed(ActionEvent e) {
+		adaptee.menuItem1_actionPerformed(e);
+	}
+}
+
+class StuedntFrame_menuItemAsk_actionAdapter implements ActionListener {
+	private StudentFrame adaptee;
+
+	public StuedntFrame_menuItemAsk_actionAdapter(StudentFrame adaptee) {
+		this.adaptee = adaptee;
+		// TODO Auto-generated constructor stub
+	}
+
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		adaptee.menuItemAsk();
+
+	}
+
+}
+
+class StuedntFrame_menuItemGetQuestion_actionAdapter implements ActionListener {
+	private StudentFrame adaptee;
+
+	public StuedntFrame_menuItemGetQuestion_actionAdapter(StudentFrame adaptee) {
+		// TODO Auto-generated constructor stub
+		this.adaptee = adaptee;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		adaptee.menuItemGetQuestion();
+	}
+
+}
+
+class StuedntFrame_menuItemCommitWork_actionAdapter implements ActionListener {
+	private StudentFrame adaptee;
+
+	public StuedntFrame_menuItemCommitWork_actionAdapter(StudentFrame adaptee) {
+		// TODO Auto-generated constructor stub
+		this.adaptee = adaptee;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		adaptee.menuItemCommitWork();
+	}
+
+}
+
+class StuedntFrame_menuItemGetWork_actionAdapter implements ActionListener {
+	private StudentFrame adaptee;
+
+	public StuedntFrame_menuItemGetWork_actionAdapter(StudentFrame adaptee) {
+		// TODO Auto-generated constructor stub
+		this.adaptee = adaptee;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		adaptee.menuItemGetWork();
+
+	}
+}
+
+class StuedntFrame_StudentFrame_menuItemAnswer_actionAdapter implements ActionListener {
+	private StudentFrame adaptee;
+
+	public StuedntFrame_StudentFrame_menuItemAnswer_actionAdapter(StudentFrame adaptee) {
+		// TODO Auto-generated constructor stub
+		this.adaptee = adaptee;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		adaptee.StudentFrame_menuItemAnswer_actionAdapter
+();
+
+	}
+}
+

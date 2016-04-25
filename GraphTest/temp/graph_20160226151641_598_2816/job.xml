@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><configuration>
+<property><name>odps.graph.use.diskbacked.mutation</name><value>false</value></property>
+<property><name>odps.graph.output.desc</name><value>[{"projName":"","tblName":"graph_out","partSpec":[],"label":"","overwrite":true}]</value></property>
+<property><name>odps.graph.combiner.class</name><value>zxy.GraphTest.MyGraphSSSPCombiner</value></property>
+<property><name>odps.graph.use.diskbacked.message</name><value>false</value></property>
+<property><name>odps.graph.runtime.partitioning</name><value>true</value></property>
+<property><name>odps.graph.vertex.class</name><value>zxy.GraphTest.MyGraphSSSPVertex</value></property>
+<property><name>odps.graph.checkpoint.superstep.frequency</name><value>10</value></property>
+<property><name>odps.graph.spill.memory.threshold</name><value>0.5</value></property>
+<property><name>odps.mapred.job.name</name><value>graph_20160226151641_598_2816</value></property>
+<property><name>odps.graph.sync.resolve.compute</name><value>true</value></property>
+<property><name>odps.graph.input.desc</name><value>[{"projName":"","tblName":"graph_in","partSpec":[],"cols":""}]</value></property>
+<property><name>odps.graph.loader.class</name><value>zxy.GraphTest.MyGraphSSSPVertexReader</value></property>
+</configuration>
