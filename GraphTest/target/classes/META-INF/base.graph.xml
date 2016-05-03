@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graph>
+	<!-- profile -->
+	<baseId>029e4257b407e4f57896ee8e86b6fab5</baseId>
+	<projectId>10596</projectId>
+	<resourceName>GraphTest</resourceName>
+	<idePath>工作流/comp</idePath>
+
+	<!-- classes -->
+	<graphLoaderCls>zxy.GraphTest.MyGraphSSSPVertexReader</graphLoaderCls>
+	<combinerCls>zxy.GraphTest.MyGraphSSSPCombiner</combinerCls>
+	<vertexCls>zxy.GraphTest.MyGraphSSSPVertex</vertexCls>
+	<!-- 
+	<aggregatorCls>zxy.GraphTest.MyGraphAggregator</aggregatorCls>
+	<partitionerCls>zxy.GraphTest.MyGraphPartitioner</partitionerCls>
+	<workerComputerCls>zxy.GraphTest.MyComputer</workerComputerCls>
+	<loadingVertexResolverCls>zxy.GraphTest.MyLoadingVertexResolver</loadingVertexResolverCls>
+	<computingVertexResolverCls>zxy.GraphTest.MyComputingVertexResolver</computingVertexResolverCls>
+	 -->
+	<jobLauncherCls>zxy.GraphTest.JobLauncher</jobLauncherCls>
+	
+	<!-- args 
+	
+	<checkPoint>${checkPoint}</checkPoint>
+	<syncBetweenResolveCompute>${syncBetweenResolveCompute}</syncBetweenResolveCompute>
+    
+    
+    <maxIteration>${maxIteration}</maxIteration>
+    <numWorker>${numWorker}</numWorker>
+    <memoryThreshold>${memoryThreshold}</memoryThreshold>
+    <useDiskBackedMessage>${useDiskBackedMessage}</useDiskBackedMessage>
+
+    <useDiskBackedMutation>${useDiskBackedMutation}</useDiskBackedMutation>
+    <splitSize>${splitSize}</splitSize>
+    <workerMem>${workerMem}</workerMem>
+    
+    <workerMem>${workerMem}</workerMem>
+    <workerCpu>${workerCpu}</workerCpu>
+    <jobPriority>${jobPriority}</jobPriority>
+	-->
+	<runtimePartitioning>true</runtimePartitioning>
+	<!-- input and output table -->
+	<inputTable>
+		<name>graph_in</name>
+	</inputTable>
+	<outputTable>
+		<name>graph_out</name>
+	</outputTable>
+</graph>

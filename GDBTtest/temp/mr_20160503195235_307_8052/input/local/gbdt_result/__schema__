@@ -1,0 +1,3 @@
+project=local
+table=gbdt_result
+columns=isbought:BIGINT,session:BIGINT,user_id:STRING,item:STRING,prediction_result:BIGINT,predict_score:DOUBLE,predict_detail:STRING

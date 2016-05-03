@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapred>
+    <!-- profile -->
+    <baseId>029e4257b407e4f57896ee8e86b6fab5</baseId>
+    <projectId>10596</projectId>
+    <resourceName>GDBTtest</resourceName>
+    <idePath>工作流/jyf</idePath>
+
+    <!-- classes -->
+    <jobLauncher>zxy.GDBTtest.JobLauncher</jobLauncher>
+    <mapper>zxy.GDBTtest.MyMapper</mapper>
+    <reducer>zxy.GDBTtest.MyReducer</reducer>
+
+    <!--task-->
+    <mapOutputKey>session:bigint,user_id:string</mapOutputKey>
+    <mapOutputValue>item_id:string,isbought:bigint,predict_score:double,predict_result:bigint</mapOutputValue>
+    <!--
+    <partitionColumns>col1,col2</partitionColumns>
+    <outputKeySortColumns>col1,col2</outputKeySortColumns>
+    <outputKeySortOrders>ASC,DESC</outputKeySortOrders>
+    <outputGroupingColumns>col1,col2</outputGroupingColumns>
+    <numReduceTask>8</numReduceTask>
+    <memoryForMapTask>2048</memoryForMapTask>
+    <memoryForReduceTask>2048</memoryForReduceTask>
+    -->
+
+    <!-- tables -->
+    <inputTables>
+        <table>
+            <name>gbdt_result</name>
+        </table>
+    </inputTables>
+    <outputTable>
+        <name>gdbt_final_result</name>
+    </outputTable>
+</mapred>

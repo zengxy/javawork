@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><configuration>
+<property><name>odps.mapred.input.desc</name><value>[{"tblName":"gbdt_result","partSpec":{},"label":"__default__"}]</value></property>
+<property><name>odps.mapred.map.class</name><value>zxy.GDBTtest.MyMapper</value></property>
+<property><name>odps.mapred.job.name</name><value>mr_20160503195050_203_5020</value></property>
+<property><name>odps.mapred.mapoutput.key.schema</name><value>session:BIGINT,user_id:STRING</value></property>
+<property><name>odps.mapred.mapoutput.value.schema</name><value>item_id:STRING,isbought:BIGINT,predict_score:DOUBLE,predict_result:BIGINT</value></property>
+<property><name>odps.mapred.output.desc</name><value>[{"tblName":"gdbt_final_result","partSpec":{},"label":"__default__"}]</value></property>
+<property><name>odps.mapred.reduce.class</name><value>zxy.GDBTtest.MyReducer</value></property>
+</configuration>
