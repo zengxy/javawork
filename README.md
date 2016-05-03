@@ -2,7 +2,7 @@
 
 maven repository：  http://maven.sdk.de.yushanfang.com/SNAPSHOT
 
-mvn build command: mvn base:check mvn base:zip mvn base:submit
+mvn build command:  base:check base:zip  base:submit
 
 配置项：
 base.program.type -  mapreduce  or  udf
