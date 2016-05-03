@@ -2,7 +2,16 @@
 
 maven repository：  http://maven.sdk.de.yushanfang.com/SNAPSHOT
 
-mvn build: mvn base:check;mvn base:zip;mvn base:submit
+mvn build command:  base:check base:zip  base:submit
+
+配置项：
+base.program.type -  mapreduce  or  udf
+
+base.endpoint -  http://api.sdk.de.yushanfang.com
+
+base.ide.url -  http://ide.de.yushanfang.com
+
+base.ide.resource.url -  http://@{env}.codebase.de.yushanfang.com/scheduler/res?id={rid}
 
 # settings.xml   .m2
 
