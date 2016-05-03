@@ -1,0 +1,3 @@
+project=local
+table=lr_result
+columns=w0:DOUBLE,w1:DOUBLE,w2:DOUBLE,w3:DOUBLE

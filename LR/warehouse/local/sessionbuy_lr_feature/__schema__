@@ -1,0 +1,3 @@
+project=local
+table=sessionbuy_lr_feature
+columns=session:bigint,user_id:string,item:string,frq_a:double,frq_r:double,ren_a:double,ren_r:double,isbought:bigint

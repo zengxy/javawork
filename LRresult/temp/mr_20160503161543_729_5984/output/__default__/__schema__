@@ -1,0 +1,3 @@
+project=local
+table=lr_final_result
+columns=session:BIGINT,user_id:STRING,top1:BIGINT,top2:BIGINT,top3:BIGINT
