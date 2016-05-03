@@ -2,9 +2,9 @@
 <mapred>
     <!-- profile -->
     <baseId>029e4257b407e4f57896ee8e86b6fab5</baseId>
-    <projectId>2805</projectId>
+    <projectId>10596</projectId>
     <resourceName>sessionBuy</resourceName>
-    <idePath>工作流/mrtest</idePath>
+    <idePath>工作流/jyf</idePath>
 
     <!-- classes -->
     <jobLauncher>zxy.sessionBuy.JobLauncher</jobLauncher>
@@ -27,10 +27,10 @@
     <!-- tables -->
     <inputTables>
         <table>
-            <name>loginfo_frq_item</name>
+            <name>loginfo</name>
         </table>
     </inputTables>
     <outputTable>
-        <name>session</name>
+        <name>sessionBuy</name>
     </outputTable>
 </mapred>

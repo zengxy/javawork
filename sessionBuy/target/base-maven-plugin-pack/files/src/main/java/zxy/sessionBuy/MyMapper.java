@@ -21,12 +21,12 @@ public class MyMapper implements Mapper {
 	@Override
 	public void map(long recordNum, Record record, TaskContext context)
 			throws IOException {
-		key.set("user_id", record.getString(0));
+		key.set("user_id", record.getString(1));
 
-		value.set("item_id", record.getBigint(1));
-		value.set("category", record.getString(2));
-		value.set("action", record.getString(3));
-		value.set("vtime", record.getString(4));
+		value.set("item_id", record.getBigint(0));
+		value.set("category", record.getString(4));
+		value.set("action", record.getString(2));
+		value.set("vtime", record.getString(3));
 		context.write(key, value);
 	}
 
