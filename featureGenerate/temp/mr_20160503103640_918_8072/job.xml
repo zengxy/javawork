@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><configuration>
+<property><name>odps.mapred.input.desc</name><value>[{"tblName":"sessionbuy","partSpec":{},"label":"__default__"}]</value></property>
+<property><name>odps.mapred.map.class</name><value>zxy.featureGenerate.MyMapper</value></property>
+<property><name>odps.mapred.job.name</name><value>mr_20160503103640_918_8072</value></property>
+<property><name>odps.mapred.mapoutput.key.schema</name><value>session:BIGINT,user_id:STRING</value></property>
+<property><name>odps.mapred.mapoutput.value.schema</name><value>item_id:BIGINT,action:STRING,vtime:STRING</value></property>
+<property><name>odps.mapred.output.desc</name><value>[{"tblName":"sessionbuy_lr_feature","partSpec":{},"label":"__default__"}]</value></property>
+<property><name>odps.mapred.reduce.class</name><value>zxy.featureGenerate.MyReducer</value></property>
+</configuration>
